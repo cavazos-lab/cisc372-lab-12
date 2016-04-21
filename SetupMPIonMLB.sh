@@ -1,5 +1,3 @@
-#!/bin/bash
-bash
 export PATH=$PATH:/usr/local/mpich2/bin/
 cp /usa/wwang/Public/python2.4 ~
 export PATH=$PATH:$HOME
