@@ -48,9 +48,10 @@ int main(void) {
       MPI_Send(greeting, strlen(greeting)+1, MPI_CHAR, 0, 0,
             MPI_COMM_WORLD); 
    } else {  
+      int q;
       /* Print my message */
       printf("Greetings from process %d of %d!\n", my_rank, comm_sz);
-      for (int q = 1; q < comm_sz; q++) {
+      for (q = 1; q < comm_sz; q++) {
          /* Receive message from process q */
          MPI_Recv(greeting, MAX_STRING, MPI_CHAR, q,
             0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
